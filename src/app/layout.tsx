@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Piyush Pandey',
   description:
     'Software Engineer, Full Stack Developer, and Open Source Contributor',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
