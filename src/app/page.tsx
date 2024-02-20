@@ -46,14 +46,16 @@ export default function Home() {
       <div
         id='intro-slider'
         className='h-screen bg-neutral-900 absolute z-10 w-full flex justify-center place-items-center text-center'>
-        <h1 id='intro' className='text-9xl font-medium text-gray-100 hidden'>
+        <h1
+          id='intro'
+          className='text-7xl lg:text-9xl font-medium text-gray-100 hidden'>
           Piyush Pandey
         </h1>
       </div>
       <div
         id='welcome'
         className='h-screen bg-gray-50 flex justify-center place-items-center text-center'>
-        <h1 className='text-8xl'>Software Engineer</h1>
+        <h1 className='text-7xl lg:text-9xl'>Software Engineer</h1>
       </div>
     </div>
   );
