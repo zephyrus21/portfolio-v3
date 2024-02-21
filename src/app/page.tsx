@@ -2,12 +2,48 @@
 
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export default function Home() {
   const comp = useRef(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
+  // useLayoutEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     const t1 = gsap.timeline();
+  //     t1.fromTo(
+  //       '#intro',
+  //       {
+  //         y: '200%',
+  //         opacity: 0,
+  //       },
+  //       {
+  //         y: '0%',
+  //         opacity: 1,
+  //         duration: 2,
+  //         ease: 'expo.out',
+  //         display: 'block',
+  //       }
+  //     )
+  //       .to('#intro', {
+  //         y: '-300%',
+  //         opacity: 0,
+  //         duration: 2,
+  //         ease: 'expo.in',
+  //         display: 'hidden',
+  //       })
+  //       .to('#intro-slider', {
+  //         y: '-100%',
+  //         duration: 2,
+  //         delay: -1,
+  //         ease: 'power4.inOut',
+  //       });
+  //   }, comp);
+
+  //   return () => ctx.revert();
+  // }, []);
+
+  useGSAP(
+    () => {
       const t1 = gsap.timeline();
       t1.fromTo(
         '#intro',
@@ -36,10 +72,9 @@ export default function Home() {
           delay: -1,
           ease: 'power4.inOut',
         });
-    }, comp);
-
-    return () => ctx.revert();
-  }, []);
+    },
+    { scope: comp }
+  );
 
   return (
     <div className='relative' ref={comp}>
